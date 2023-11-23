@@ -6,7 +6,7 @@ This program implements a deep learning framework focused on using Convolutional
 ## Data Preparation
 This section outlines the steps for preparing genomic data for analysis. We focus on dimensionality reduction of the input VCF files through PCA (Principal Component Analysis). Two methods are presented: using Plink for PCA, and transforming VCF files into a 012 matrix followed by PCA using Python libraries.
 
-##Method 1: PCA with Plink
+Method 1: PCA with Plink
 This section describes a detailed procedure for performing PCA on VCF files using Plink. The process involves retaining a number of principal components equal to the number of samples initially, then determining the number of principal components to retain based on the proportion of variance explained by each component.
 1. Plink Installation**:
    Ensure Plink (preferably version 2.0 or later) is installed on your system. Plink can be downloaded from [the Plink website](https://www.cog-genomics.org/plink/).
@@ -32,7 +32,7 @@ This section describes a detailed procedure for performing PCA on VCF files usin
    - This will give you the final PCA output with the desired number of components.
 By following these steps, you will be able to perform PCA using Plink effectively, retaining the most informative principal components for your genomic data.
 
-##Method 2: PCA on 012 Matrix with Python
+Method 2: PCA on 012 Matrix with Python
 Conversion to 012 Matrix:
 First, convert the VCF file to a 012 matrix (0 for homozygous reference, 1 for heterozygous, and 2 for homozygous variant).
 This can be done using various tools or scripts that parse VCF files and output the genotype in the 012 format.
@@ -67,6 +67,7 @@ pip install -r requirement.txt
 After the training is complete, the model's prediction results and performance evaluations will be saved in the result_dir directory you specified. You can view the following files:
 pcc_twg.csv: Contains the model's predictions for the test set.
 twg_model.h5: The trained model file.
+
 2、Prediction
 ```
 ./prediction --model_path ./result/gal_model.h5 --data_path ./data/gal.csv --scaler_path ./result/scaler.joblib --output_path ./result
