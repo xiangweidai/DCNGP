@@ -5,27 +5,28 @@ This program implements a deep learning framework focused on using Convolutional
 
 ## Data Preparation
 This section outlines the steps for preparing genomic data for analysis. We focus on dimensionality reduction of the input VCF files through PCA (Principal Component Analysis). Two methods are presented: using Plink for PCA, and transforming VCF files into a 012 matrix followed by PCA using Python libraries.
+
 Method 1: PCA with Plink
 This section describes a detailed procedure for performing PCA on VCF files using Plink. The process involves retaining a number of principal components equal to the number of samples initially, then determining the number of principal components to retain based on the proportion of variance explained by each component.
-1. **Plink Installation**:
+1. Plink Installation**:
    Ensure Plink (preferably version 2.0 or later) is installed on your system. Plink can be downloaded from [the Plink website](https://www.cog-genomics.org/plink/).
-2. **Initial PCA with Plink**:
+2. Initial PCA with Plink**:
    Run PCA on your VCF file using Plink with the following command:
    plink2 --vcf path_to_your_data.vcf --pca number_of_samples --out pca_output
    - `--vcf`: Specifies the path to your VCF file.
    - `--pca number_of_samples`: Replace `number_of_samples` with the actual number of samples in your dataset. This will initially compute as many principal components as there are samples.
    - `--out`: Specifies the output file prefix.
-3. **Analyzing Output**:
+3. Analyzing Output**:
    Plink will produce output files including:
    - `pca_output.eigenval`: Lists the eigenvalues (variance explained) for each principal component.
    - `pca_output.eigenvec`: Contains the actual principal components for each sample.
-4. **Determining Principal Components to Retain**:
+4. Determining Principal Components to Retain**:
    - Open the `pca_output.eigenval` file and calculate the proportion of variance explained by each principal component.
    - A common approach is to retain components that explain a significant amount of variance (e.g., using a cumulative variance threshold like 95%).
    - The formula for the proportion of variance explained by each PC is:
      Proportion of Variance = Eigenvalue of PC / Sum of all Eigenvalues
    - Add these proportions cumulatively until your desired threshold of total variance explained is reached.
-5. **Final PCA with Selected Components**:
+5. Final PCA with Selected Components**:
    - Once you've determined how many principal components to retain (say `N` components), run Plink again with this number:
      plink2 --vcf path_to_your_data.vcf --pca N --out final_pca_output
    - This will give you the final PCA output with the desired number of components.
