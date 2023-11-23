@@ -57,15 +57,25 @@ pip install -r requirement.txt
 0.0001 --scaler_path ./result/scaler.joblib
 ```
 --data_dir ./data           # Directory of the dataset
+
 --result_dir ./result       # Directory for output results
+
 --dataset_type twg          # Type of dataset
+
 --batch_size 16             # Batch size for training
+
 --early_stopping_patience 16# Patience for early stopping
+
 --reduce_lr_patience 10     # Patience for reducing learning rate
+
 --learning_rate 0.0001      # Initial learning rate
+
 --scaler_path ./result/scaler.joblib # Path to save the StandardScaler state
+
 After the training is complete, the model's prediction results and performance evaluations will be saved in the result_dir directory you specified. You can view the following files:
+
 pcc_twg.csv: Contains the model's predictions for the test set.
+
 twg_model.h5: The trained model file.
 
 2、Prediction
