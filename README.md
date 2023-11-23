@@ -31,6 +31,7 @@ This section describes a detailed procedure for performing PCA on VCF files usin
      plink2 --vcf path_to_your_data.vcf --pca N --out final_pca_output
    - This will give you the final PCA output with the desired number of components.
 By following these steps, you will be able to perform PCA using Plink effectively, retaining the most informative principal components for your genomic data.
+
 ##Method 2: PCA on 012 Matrix with Python
 Conversion to 012 Matrix:
 First, convert the VCF file to a 012 matrix (0 for homozygous reference, 1 for heterozygous, and 2 for homozygous variant).
