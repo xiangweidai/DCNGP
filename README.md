@@ -30,7 +30,6 @@ This section describes a detailed procedure for performing PCA on VCF files usin
      plink2 --vcf path_to_your_data.vcf --pca N --out final_pca_output
    - This will give you the final PCA output with the desired number of components.
 By following these steps, you will be able to perform PCA using Plink effectively, retaining the most informative principal components for your genomic data.
-```
 Method 2: PCA on 012 Matrix with Python
 Conversion to 012 Matrix:
 First, convert the VCF file to a 012 matrix (0 for homozygous reference, 1 for heterozygous, and 2 for homozygous variant).
@@ -38,19 +37,17 @@ This can be done using various tools or scripts that parse VCF files and output 
 Python PCA:
 Import the 012 matrix into a Python environment.
 Utilize libraries like scikit-learn to perform PCA.
-
 Importing Principal Components into a CSV File:
 1. Import the principal component data obtained from the PCA analysis into a new CSV file.
 2. Insert the corresponding phenotypic data into the first column of the CSV file.
 3. Randomly divide the training and test sets:
    Use a 4:1 ratio to randomly divide the data into training and test sets. Save the divided training and test sets as two separate CSV files. The file names should include the name of the phenotype and end with .train.csv and .test.csv as suffixes, for example, phenotype_name.train.csv and phenotype_name.test.csv.
-## Install
 
+## Install
 Python 3.6.8
 ```
 pip install -r requirement.txt
 ```
-
 ## Running the program
 
 ```
