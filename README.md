@@ -51,10 +51,11 @@ Python 3.6.8
 pip install -r requirement.txt
 ```
 ## Running the program
-
-```
 1、Training the Model
-./main --data_dir ./data --result_dir ./result --dataset_type gal  --batch_size 16 --early_stopping_patience 16 --reduce_lr_patience 10 --leaky_alpha 0.7  --learning_rate 0.0001 --scaler_path ./result/scaler.joblib
+```
+./main --data_dir ./data --result_dir ./result --dataset_type gal  --batch_size 16 --early_stopping_patience 16 --reduce_lr_patience 10 --leaky_alpha 0.7  --learning_rate
+0.0001 --scaler_path ./result/scaler.joblib
+```
 --data_dir ./data           # Directory of the dataset
 --result_dir ./result       # Directory for output results
 --dataset_type twg          # Type of dataset
@@ -67,6 +68,7 @@ After the training is complete, the model's prediction results and performance e
 pcc_twg.csv: Contains the model's predictions for the test set.
 twg_model.h5: The trained model file.
 2、Prediction
+```
 ./prediction --model_path ./result/gal_model.h5 --data_path ./data/gal.csv --scaler_path ./result/scaler.joblib --output_path ./result
 ```
 
