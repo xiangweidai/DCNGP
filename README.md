@@ -3,6 +3,18 @@
 This program implements a deep learning framework focused on using Convolutional Neural Networks (CNN) to predict phenotypic traits in plants or animals from genomic data. It aims to enhance the accuracy and efficiency of genomic selection by analyzing genomic data to predict phenotypic traits.
 * DCNGP Model: https://github.com/shuaizengMU/G2PDeep_model](https://github.com/xiangweidai/DCNGP
 
+# Prerequisites
+
+This project uses Git Large File Storage (Git LFS) to manage large files. To ensure that these files are handled correctly, Git LFS must be installed on your system.
+
+Installing Git LFS
+
+Follow these steps to install Git LFS:
+```
+sudo yum install git-lfs
+```
+This will ensure that Git LFS is set up correctly and ready to handle large files.
+
 ## Data Preparation
 This section outlines the steps for preparing genomic data for analysis. We focus on dimensionality reduction of the input VCF files through PCA (Principal Component Analysis). Two methods are presented: using Plink for PCA, and transforming VCF files into a 012 matrix followed by PCA using Python libraries.
 
