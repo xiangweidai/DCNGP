@@ -1,7 +1,7 @@
 # Introduction
 
 This program implements a deep learning framework focused on using Convolutional Neural Networks (CNN) to predict phenotypic traits in plants or animals from genomic data. It aims to enhance the accuracy and efficiency of genomic selection by analyzing genomic data to predict phenotypic traits.
-* DCNGP Model: https://github.com/shuaizengMU/G2PDeep_model](https://github.com/xiangweidai/DCNGP
+* DCNGP Model:https://github.com/xiangweidai/DCNGP
 
 # Prerequisites
 
